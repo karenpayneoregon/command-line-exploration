@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleApp2": {
+      "commandName": "Project",
+      "commandLineArgs": "--environment Development --username \"karen payne\" --log true"
+    }
+  }
+}

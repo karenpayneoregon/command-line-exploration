@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleApp1": {
+      "commandName": "Project",
+      "commandLineArgs": "-e Development -u \"karen payne\" -l true"
+    }
+  }
+}
