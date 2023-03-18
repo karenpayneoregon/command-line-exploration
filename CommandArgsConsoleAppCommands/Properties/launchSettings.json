@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleAppCommands": {
+      "commandName": "Project",
+      "commandLineArgs": "sub1 sub1a"
+    }
+  }
+}

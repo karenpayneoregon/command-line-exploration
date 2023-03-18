@@ -4,7 +4,6 @@ using System.CommandLine.Help;
 using System.CommandLine.Parsing;
 using CommandArgsConsoleAppHelp.Classes;
 using Spectre.Console;
-using Spectre.Console.Rendering;
 
 namespace CommandArgsConsoleAppHelp;
 
@@ -13,7 +12,9 @@ internal class Program
     static async Task Main(string[] args)
     {
 
-
+        /*
+         *
+         */
         var userNameOption = new Option<string>("--username")
         {
             Description = "Current user name",
