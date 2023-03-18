@@ -1,3 +1,8 @@
 # Working with command line (C#)
 
-TODO
+| Project        |   Description    |
+|:------------- |:-------------|
+| CommandArgsConsoleApp1 |  |
+| CommandArgsConsoleApp2 |  |
+| CommandArgsConsoleAppHelp |  |
+| CommandArgsConsoleSubCommands |  |
