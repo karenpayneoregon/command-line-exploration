@@ -15,6 +15,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandArgsConsoleAppHelp", "CommandArgsConsoleAppHelp\CommandArgsConsoleAppHelp.csproj", "{B8F489FD-06A8-484A-AB0E-8475CABEEC0E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArgsConsoleSubCommands", "CommandArgsConsoleSubCommands\CommandArgsConsoleSubCommands.csproj", "{843AAA94-A772-4434-9B9F-930366D27618}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{B8F489FD-06A8-484A-AB0E-8475CABEEC0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8F489FD-06A8-484A-AB0E-8475CABEEC0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8F489FD-06A8-484A-AB0E-8475CABEEC0E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{843AAA94-A772-4434-9B9F-930366D27618}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{843AAA94-A772-4434-9B9F-930366D27618}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{843AAA94-A772-4434-9B9F-930366D27618}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{843AAA94-A772-4434-9B9F-930366D27618}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

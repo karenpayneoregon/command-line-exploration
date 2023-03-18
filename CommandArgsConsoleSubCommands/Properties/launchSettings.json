@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleSubCommands": {
+      "commandName": "Project",
+      "commandLineArgs": "read --file LargePeople.txt "
+    }
+  }
+}
