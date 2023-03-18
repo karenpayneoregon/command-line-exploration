@@ -17,7 +17,7 @@ public class Program
         LogOperations.Logging(config);
         MainOperations.ViewEnvironment(config);
         MainOperations.UserNameCheck(config);
-
+        Console.ReadLine();
     }
 
 

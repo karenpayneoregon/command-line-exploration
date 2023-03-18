@@ -1,24 +1,17 @@
 ﻿namespace CommandArgsConsoleApp2.Classes;
 internal class MainOperations
 {
-    public static void MainCommand(string environment, string userNameOption, bool logOption)
+    public static void MainCommand(Environment currentEnvironment, string userName, bool log)
     {
-        
-        if (Enum.TryParse(environment, true, out Environment currentEnvironment))
+        AnsiConsole.MarkupLine($"[yellow]environment[/] {currentEnvironment}");
+        AnsiConsole.MarkupLine($"        [yellow]log[/] {log}");
+
+        if (userName is not null)
         {
-            Console.WriteLine($"--environment = {currentEnvironment}");
-        }
-        else
-        {
-            AnsiConsole.MarkupLine($"[b]--environment[/] = {currentEnvironment} [red]is not valid[/]");
+            AnsiConsole.MarkupLine($"[yellow]   username[/] {userName}");
         }
 
-        if (userNameOption is not null)
-        {
-            Console.WriteLine($"--username = {userNameOption}");
-        }
-
-        if (logOption)
+        if (log)
         {
             SetupLogging.Initialize(currentEnvironment);
             LogOperations.CreateSomeLogs();

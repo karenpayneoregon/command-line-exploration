@@ -10,8 +10,7 @@ internal class Program
     static async Task Main(string[] args)
     {
 
-        // best to use enum but Option does not allow them
-        var environmentOption = new Option<string>("--environment")
+        var environmentOption = new Option<Classes.Environment>("--environment")
         {
             Description = "Application runtime environment",
             IsRequired = true
@@ -31,6 +30,7 @@ internal class Program
             IsRequired = true
         };
         logOption.AddAlias("-l");
+
 
         // --environment Development --username "karen payne" --log true
 
@@ -53,5 +53,6 @@ internal class Program
         commandLineBuilder.UseDefaults();
         var parser = commandLineBuilder.Build();
         await parser.InvokeAsync(args);
+
     }
 }

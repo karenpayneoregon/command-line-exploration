@@ -15,12 +15,16 @@ internal class SetupLogging
         const string schemaName = "dbo";
         const string tableName = "LogEvents";
 
-        IConfigurationRoot configuration = new ConfigurationBuilder()
-            .AddJsonFile($"appsettings.{environment}.json", optional: true, reloadOnChange: true)
-            .Build();
-
+        var configuration = Configurations.GetConfigurationRoot(environment.ToString());
         var columnOptionsSection = configuration.GetSection("Serilog:ColumnOptions");
         var sinkOptionsSection = configuration.GetSection("Serilog:SinkOptions");
+
+        /*
+         * Shows how to read values to validate we are, in this case reading from appsettings correctly
+         */
+        ColumnOptions columnOptions = configuration.GetSection("Serilog").Get<ColumnOptions>();
+        var timeStamp = columnOptions.TimeStamp.ColumnName;
+
 
         Log.Logger = new LoggerConfiguration()
             .WriteTo.MSSqlServer(

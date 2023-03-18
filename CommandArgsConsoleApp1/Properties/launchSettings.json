@@ -2,7 +2,7 @@
   "profiles": {
     "CommandArgsConsoleApp1": {
       "commandName": "Project",
-      "commandLineArgs": "-e Development -u \"karen payne\" -l true"
+      "commandLineArgs": "--environment production --username \"karen payne\" --log true"
     }
   }
 }

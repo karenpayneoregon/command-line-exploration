@@ -8,11 +8,13 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <None Remove="Models\Serilog\readme.md" />
 	  <None Remove="readme.md" />
 	</ItemGroup>
 
 	<ItemGroup>
 	  <Content Include="assets\csharp.ico" />
+	  <Content Include="Models\Serilog\readme.md" />
 	  <Content Include="readme.md" />
 	</ItemGroup>
 
