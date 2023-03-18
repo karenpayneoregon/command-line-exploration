@@ -40,13 +40,8 @@ internal class MainOperations
 
                 List<KeyValuePair<string, string>> settings = Configurations.GetConfigurationRoot1(environment.ToString());
 
-                // uncomment to see all keys/values
-                //Console.WriteLine(new string('-', 50));
-                //foreach (var (key, value) in settings)
-                //{
-                //    Console.WriteLine($"{key}  {value}");
-                //}
-                //Console.WriteLine(new string('-', 50));
+                //uncomment to see all keys / values
+                //ShowKeyPairs(settings);
 
                 Console.WriteLine($"                         Log database = {settings.FirstOrDefault(x => 
                     x.Key == "ConnectionStrings:LogDatabase").Value}");
@@ -63,5 +58,18 @@ internal class MainOperations
         {
             Console.WriteLine("argument not passed or not spelled right");
         }
+    }
+
+    /// <summary>
+    /// Show key/values in appsettings file
+    /// </summary>
+    private static void ShowKeyPairs(List<KeyValuePair<string, string>> settings)
+    {
+        Console.WriteLine(new string('-', 50));
+        foreach (var (key, value) in settings)
+        {
+            Console.WriteLine($"{key}  {value}");
+        }
+        Console.WriteLine(new string('-', 50));
     }
 }
