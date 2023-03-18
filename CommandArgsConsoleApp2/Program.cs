@@ -1,5 +1,6 @@
 ﻿using System.CommandLine;
 using System.CommandLine.Builder;
+using System.CommandLine.Help;
 using System.CommandLine.Parsing;
 using CommandArgsConsoleApp2.Classes;
 
@@ -51,8 +52,34 @@ internal class Program
         });
 
         commandLineBuilder.UseDefaults();
-        var parser = commandLineBuilder.Build();
-        await parser.InvokeAsync(args);
+        Parser parser = commandLineBuilder.Build();
+        
 
+        //var parser = new CommandLineBuilder(rootCommand)
+        //    .UseDefaults()
+        //    .UseHelp(ctx =>
+        //    {
+        //        ctx.HelpBuilder.CustomizeSymbol(environmentOption,
+        //            firstColumnText: "--color <Black, White, Red, or Yellow>",
+        //            secondColumnText: "Specifies the foreground color. " +
+        //                              "Choose a color that provides enough contrast " +
+        //                              "with the background color. " +
+        //                              "For example, a yellow foreground can't be read " +
+        //                              "against a light mode background.");
+        //        ctx.HelpBuilder.CustomizeLayout(
+        //            _ =>
+        //                HelpBuilder.Default
+        //                    .GetLayout()
+        //                    .Skip(1) // Skip the default command description section.
+        //                    .Prepend(
+        //                        _ => Spectre.Console.AnsiConsole.Write(
+        //                            new FigletText(rootCommand.Description!))
+        //                    ));
+        //    })
+        //    .Build();
+
+        await parser.InvokeAsync(args);
+        Console.ReadLine();
+        //--environment Development --username "karen payne" --log true
     }
 }

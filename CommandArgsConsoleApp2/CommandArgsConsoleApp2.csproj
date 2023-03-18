@@ -33,10 +33,6 @@
 		<PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="7.0.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<PackageReference Include="ConsoleHelperLibrary" Version="1.0.0" />
-	</ItemGroup>
-
 
 	<ItemGroup>
 		<PackageReference Include="Spectre.Console" Version="0.46.0" />

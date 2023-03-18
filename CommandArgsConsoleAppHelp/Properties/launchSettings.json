@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleAppHelp": {
+      "commandName": "Project",
+      "commandLineArgs": "--help"
+    }
+  }
+}
