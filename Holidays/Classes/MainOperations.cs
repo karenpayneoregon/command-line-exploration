@@ -1,4 +1,7 @@
 ﻿using System.Text.Json;
+using Nager.Date;
+using Nager.Date.Extensions;
+using static System.DateTime;
 
 namespace Holidays.Classes;
 
@@ -10,8 +13,12 @@ internal class MainOperations
 
         using var httpClient = new HttpClient();
         
-        var response = await httpClient.GetAsync(
-            $"https://date.nager.at/api/v3/publicholidays/{DateTime.Now.Year}/{countryCode}");
+        /*
+         * Here we get holidays for the current year, optionally setup another parameter to the program which
+         * is not required for the year, if null, use the current year.
+         */
+        var response = await httpClient.GetAsync($"https://date.nager.at/api/v3/publicholidays/{
+            Now.Year}/{countryCode}");
 
         if (response.IsSuccessStatusCode)
         {
@@ -23,30 +30,47 @@ internal class MainOperations
                     !.Distinct(PublicHoliday.DateComparer);
 
             Console.WriteLine();
-            AnsiConsole.MarkupLine($"[yellow]Holidays[/] for {countryCode} for {DateTime.Now.Year}");
+            AnsiConsole.MarkupLine($"[yellow]Holidays[/] for {countryCode} for {Now.Year}");
 
             var table = new Table()
                 .RoundedBorder()
                 .AddColumn("[b]Name[/]")
                 .AddColumn("[b]Date[/]")
+                .AddColumn("[b]Weekend[/]")
                 .Alignment(Justify.Left)
                 .BorderColor(Color.CadetBlue);
 
             foreach (var holiday in publicHolidays!)
             {
 
-                if (holiday.Date > DateTime.Now)
+                Enum.TryParse(countryCode, true, out CountryCode code);
+                if (holiday.Date > Now)
                 {
-                    table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]");
+                    if (holiday.Date.IsWeekend(code))
+                    {
+                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]", "[yellow]*[/]");
+                    }
+                    else
+                    {
+                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]");
+                    }
                 }
                 else
                 {
-                    table.AddRow(holiday.Name, holiday.Date.ToString("MM/dd/yyyy"));
+                    if (holiday.Date.IsWeekend(code))
+                    {
+                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]", "[yellow]*[/]");
+                    }
+                    else
+                    {
+                        table.AddRow($"{holiday.Name}", $"{holiday.Date:MM/dd/yyyy}");
+                    }
                 }
             }
 
 
             AnsiConsole.Write(table);
+
         }
         else
         {

@@ -101,9 +101,10 @@ internal class Operations
 To see the json response, view Samples\us.json
 
 
-# Note
+# Notes
 
-There is are more to the library than just getting a dates for a year, see [documentation](https://github.com/nager/Nager.Date) on GitHub.
+- Valid [country codes](https://github.com/nager/Nager.Date/blob/main/src/Nager.Date/CountryCode.cs)
+- There is are more to the library than just getting a dates for a year, see [documentation](https://github.com/nager/Nager.Date) on GitHub.
 
 # Dotnet tool
 
