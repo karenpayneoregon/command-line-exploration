@@ -22,6 +22,10 @@ To create a .NET tool there are two NuGet packages
 
 In this article, Microsoft.Extensions.Configuration.CommandLine will be used which is currently considered in preview while CommandLineParser is considered a mature package.
 
+## Advise before creating a tool
+
+Rather than try and figure out what to create a tool for, instead consider task done that require several steps that can be done in C#. Next, create a console project without Microsoft.Extensions.Configuration.CommandLine package, get it working perfectly. Next, create a new console project and bring in the code from the first project, now with the Microsoft.Extensions.Configuration.CommandLine package. The alternate is to create one project and simple write the code if you feel comfortable with the basics presented below.
+
 ## Creating a simple tool
 
 Let's start off simple, in this sample, get first and last name.
@@ -154,6 +158,19 @@ After uninstall
 Tool 'YourProjectName' (version '2.0.0') was successfully uninstalled.
 ```
 
+## Samples as tools
+
+There are two projects that are practical examples for .NET tools. 
+
+The first is Holidays which gets all holidays for the current year by two character country code. Once installed, pass `-c XX` where 'XX' is a [country code](https://github.com/nager/Nager.Date/blob/main/src/Nager.Date/CountryCode.cs). This makes a call to https://date.nager.at/api/v3/publicholidays/ to get holidays for the current year and country.
+
+
+The second DirectoryCount expects `-d` followed by a folder name which when executed returns total folder and file count of the folder passed. If the user does not have permissons the exception is caught and presented, if the folder does not exists, that is captured also.
+
+# Included projects
+
+Are listed below, the project CommandArgsConsoleAppHelp showcases how to override the [default help](https://learn.microsoft.com/en-us/dotnet/standard/commandline/customize-help) which can better assist users in the case where the default help does not fully convey usage e.g. a parameter is –name which expects first and last name. They may not know to wrap as follows –name “Karen Payne” while a better approach would be –first Karen –last Payne.
+
 | Project        |   Description    |
 |:------------- |:-------------|
 | KP_CommandLineBase | A very basic tool example to accept first and last name, both required to display to the console. |
@@ -163,3 +180,14 @@ Tool 'YourProjectName' (version '2.0.0') was successfully uninstalled.
 | CommandArgsConsoleSubCommands |  Shows how to use verbs and commands to read a file in chunks and display to the screen. This project is based off a Microsoft code sample and enhanced.|
 | DirectoryCount| This project demonstrates how to get a folder and file count recursively for a folder name passed. If the user lacks proper permissions an exception is caught and thrown. |
 | Holidays | This project shows holidays by two letter country code for the current year and is setup to run as a dot net tool with instructions in its read me file. |
+
+## See also
+
+- System.CommandLine [overview](https://learn.microsoft.com/en-us/dotnet/standard/commandline/)
+- [command-line-api](https://github.com/dotnet/command-line-api)
+- [How to manage .NET tools](https://learn.microsoft.com/en-us/dotnet/core/tools/global-tools)
+- [Mark of the web remover](https://dev.to/karenpayneoregon/mark-of-the-web-remover-14kc) A utility to remove mark of the web from a folder recursively to all sub-folders.
+
+## Source code
+
+Clone the following [GitHub repository](https://github.com/karenpayneoregon/command-line-exploration) which was created with Microsoft VS2022 using C#11.
