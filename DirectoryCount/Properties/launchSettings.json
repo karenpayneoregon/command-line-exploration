@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DirectoryCount": {
+      "commandName": "Project",
+      "commandLineArgs": "-d C:\\OED\\DotnetLand\\VS2022\\CommandLineExamples"
+    }
+  }
+}
