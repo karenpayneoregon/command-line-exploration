@@ -39,7 +39,6 @@ internal partial class Program
 
         await parser.InvokeAsync(args);
 
-        Console.ReadLine();
     }
 
 }
