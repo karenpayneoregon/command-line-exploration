@@ -55,7 +55,7 @@ internal class Program
         Parser parser = commandLineBuilder.Build();
         
         await parser.InvokeAsync(args);
-        Console.ReadLine();
+
         //--environment Development --username "karen payne" --log true
     }
 }

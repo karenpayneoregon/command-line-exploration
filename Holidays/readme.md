@@ -114,7 +114,7 @@ To see the json response, view Samples\us.json
 
 If you find this code useful then consider creating a dotnet tool.
 
-## # Install/uninstall
+##  Install/uninstall
 
 1. Build the project
 1. Open a command prompt or PowerShell to the root of this project
