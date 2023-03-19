@@ -2,6 +2,8 @@
 
 Learn how to create .NET tools which can assist with automating task which can be installed globally on a computer.
 
+:fleur_de_lis: [Article](https://dev.to/karenpayneoregon/c-net-tools-withsystemcommandline-2nc2)
+
 ## Skill level
 
 To write a simple .NET tool requires basic understand of the C# language and basics of working with classes. Consider starting with the project CommandArgsConsoleApp1.
