@@ -1,4 +1,4 @@
-﻿# About
+﻿## About
 
 An example to get holidays from NuGet package [Nager.Date](https://www.nuget.org/packages/Nager.Date/1.35.0?_src=template) library.
 
@@ -9,7 +9,11 @@ An example to get holidays from NuGet package [Nager.Date](https://www.nuget.org
 
 ![Screenshot1](assets/screenshot1.png)
 
-**Startup code**
+Invalid code
+![Screenshot2](assets/screenshot2.png)
+
+
+##Startup code
 
 This code follows the same pattern as in CommandArgsConsoleApp2 project except the main code is asynchronous.
 
@@ -49,7 +53,7 @@ internal partial class Program
 }
 ```
 
-**Base code**
+## Base code
 
 ```csharp
 internal class Operations
@@ -101,12 +105,12 @@ internal class Operations
 To see the json response, view Samples\us.json
 
 
-# Notes
+## Notes
 
 - Valid [country codes](https://github.com/nager/Nager.Date/blob/main/src/Nager.Date/CountryCode.cs)
 - There is are more to the library than just getting a dates for a year, see [documentation](https://github.com/nager/Nager.Date) on GitHub.
 
-# Dotnet tool
+## Dotnet tool
 
 If you find this code useful then consider creating a dotnet tool.
 
