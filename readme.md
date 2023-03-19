@@ -29,6 +29,9 @@ Let's start off simple, in this sample, get first and last name.
 
 Create a new Console project, once created double click on the project name in Solution Explorer. Remove current contents in place of the following.
 
+> **Note**
+> In the section below for installing and uninstalling YourProjectName needs to be replaced with the name of this project. In the supplied example in the GitHub repository the project name is KP_CommandLineBase.
+
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
 
@@ -50,10 +53,106 @@ Create a new Console project, once created double click on the project name in S
 </Project>
 ```
 
-Save the file.
+Save the file. 
+
+Next, create a folder named `Classes`, add a class named `MainOperation` which will be called in Program.Main below.
+
+Add the following code to MainOperations class
+
+```csharp
+internal class MainOperations
+{
+    public static void MainCommand(string firstName, string lastName)
+    {
+        Console.WriteLine($"Hello {firstName} {lastName}");
+    }
+}
+```
 
 
- 
+Next, open Program.cs and replace current Program code with the following.
+
+```csharp
+internal class Program
+{
+    static async Task Main(string[] args)
+    {
+        var firstNameOption = new Option<string>("--first")
+        {
+            Description = "First name",
+            IsRequired = true
+        };
+        firstNameOption.AddAlias("-f");
+
+        var lastNameOption = new Option<string>("--last")
+        {
+            Description = "last name",
+            IsRequired = true
+        };
+        lastNameOption.AddAlias("-l");
+
+        RootCommand rootCommand = new("Example for a basic command line tool")
+        {
+            firstNameOption,
+            lastNameOption
+        };
+
+        rootCommand.SetHandler(MainOperations.MainCommand, firstNameOption, lastNameOption);
+
+        var commandLineBuilder = new CommandLineBuilder(rootCommand);
+
+        commandLineBuilder.AddMiddleware(async (context, next) =>
+        {
+            await next(context);
+        });
+
+        commandLineBuilder.UseDefaults();
+        Parser parser = commandLineBuilder.Build();
+
+        await parser.InvokeAsync(args);
+
+    }
+}
+```
+
+- firstNameOption and lastNameOpen of type [Option](https://learn.microsoft.com/en-us/dotnet/standard/commandline/syntax#options) define expected parameters.
+    - For first name `--first` or `-f` e.g. -f Karen
+    - For last name `--last` or `-l` e.g. -f Payne
+ - [RootCommand](https://learn.microsoft.com/en-us/dotnet/standard/commandline/syntax#root-commands) rootCommand represents the main action that the application performs
+- rootCommand.SetHandler defines, the method to handle actions passed which in this case are firstNameOption and lastNameOption
+- var commandLineBuilder = new CommandLineBuilder(rootCommand); enables composition of command line configurations.
+-  commandLineBuilder.AddMiddleware(async (context, next) ... see [How to use middleware in System.CommandLine](https://learn.microsoft.com/en-us/dotnet/standard/commandline/use-middleware)
+- commandLineBuilder.[UseDefaults](https://learn.microsoft.com/en-us/dotnet/api/system.commandline.builder.commandlinebuilderextensions.usedefaults?view=system-commandline#system-commandline-builder-commandlinebuilderextensions-usedefaults(system-commandline-builder-commandlinebuilder))();
+- Parser parser = commandLineBuilder.[Build](https://learn.microsoft.com/en-us/dotnet/api/system.commandline.builder.commandlinebuilder.build?view=system-commandline#system-commandline-builder-commandlinebuilder-build)();
+- await parser.[InvokeAsync](https://learn.microsoft.com/en-us/dotnet/api/system.commandline.commandextensions.invokeasync#system-commandline-commandextensions-invokeasync(system-commandline-command-system-string-system-commandline-iconsole))(args); parses and invokes the given command
+
+###  Install/uninstall
+
+- Build the project
+- Open a command prompt or PowerShell to the root of this project
+- Enter the following to install 
+    - dotnet tool install --global --add-source ./nupkg `YourProjectName`
+- Enter the following to uninstall
+    - dotnet tool uninstall  -g `YourProjectName` to uninstall the tool.
+
+After installation
+
+```
+You can invoke the tool using the following command: hello
+Tool 'YourProjectName' (version '2.0.0') was successfully installed.
+```
+
+Run the tool (hello is defined in the .csproj file `ToolCommandName`)
+
+```
+hello -f Karen -l Payne
+```
+
+After uninstall
+
+```
+Tool 'YourProjectName' (version '2.0.0') was successfully uninstalled.
+```
 
 | Project        |   Description    |
 |:------------- |:-------------|
