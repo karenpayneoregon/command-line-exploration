@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandArgsConsoleAppHelp",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArgsConsoleSubCommands", "CommandArgsConsoleSubCommands\CommandArgsConsoleSubCommands.csproj", "{843AAA94-A772-4434-9B9F-930366D27618}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{408D23FA-3612-4C46-ABCF-D802E705EA3F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidays", "Holidays\Holidays.csproj", "{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{843AAA94-A772-4434-9B9F-930366D27618}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{843AAA94-A772-4434-9B9F-930366D27618}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{843AAA94-A772-4434-9B9F-930366D27618}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{50183F32-D88B-43E5-ACFD-DE064ACA6DD4} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ACBF010-A721-48C0-A709-B178C29A8464}
