@@ -1,4 +1,5 @@
 ﻿using Holidays.Classes;
+using Nager.Date;
 using System.CommandLine;
 using System.CommandLine.Builder;
 using System.CommandLine.Parsing;
@@ -10,6 +11,8 @@ internal partial class Program
 {
     static async Task Main(string[] args)
     {
+        DateSystem.LicenseKey = "TheLicenseKey";
+
         var environmentOption = new Option<string>("--code")
         {
             Description = "Two letter country code",

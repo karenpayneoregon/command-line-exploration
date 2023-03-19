@@ -5,6 +5,10 @@ An example to get holidays from NuGet package [Nager.Date](https://www.nuget.org
 
 ![Screenshot](assets/screenshot.png)
 
+<br>
+
+![Screenshot1](assets/screenshot1.png)
+
 **Startup code**
 
 This code follows the same pattern as in CommandArgsConsoleApp2 project except the main code is asynchronous.
