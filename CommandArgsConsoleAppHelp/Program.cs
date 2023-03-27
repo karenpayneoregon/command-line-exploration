@@ -12,9 +12,6 @@ internal class Program
     static async Task Main(string[] args)
     {
 
-        /*
-         *
-         */
         var userNameOption = new Option<string>("--username")
         {
             Description = "Current user name",
@@ -46,6 +43,7 @@ internal class Program
                 ctx.HelpBuilder.CustomizeSymbol(userNameOption,
                     firstColumnText: "--username ",
                     secondColumnText: "If entering first and last name use double quotes\notherwise enter your first name");
+                
                 ctx.HelpBuilder.CustomizeLayout(
                     _ =>
                         HelpBuilder.Default
