@@ -45,7 +45,9 @@ public class DirectoryHelpers
                 .GroupBy(fsi => fsi is DirectoryInfo)
                 .ToDictionary(item => item.Key, s => s.Count());
 
-            return (dictionary.ContainsKey(true) ? dictionary[true] : 0, dictionary.ContainsKey(false) ? dictionary[false] : 0, null)!;
+            return (dictionary.TryGetValue(true, out var value) ? value : 
+                0, 
+                dictionary.TryGetValue(false, out var value1) ? value1 : 0, null)!;
         }
         catch (Exception localException)
         {

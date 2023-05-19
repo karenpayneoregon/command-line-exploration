@@ -15,13 +15,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandArgsConsoleAppHelp", "CommandArgsConsoleAppHelp\CommandArgsConsoleAppHelp.csproj", "{B8F489FD-06A8-484A-AB0E-8475CABEEC0E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandArgsConsoleSubCommands", "CommandArgsConsoleSubCommands\CommandArgsConsoleSubCommands.csproj", "{843AAA94-A772-4434-9B9F-930366D27618}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandArgsConsoleSubCommands", "CommandArgsConsoleSubCommands\CommandArgsConsoleSubCommands.csproj", "{843AAA94-A772-4434-9B9F-930366D27618}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{408D23FA-3612-4C46-ABCF-D802E705EA3F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Holidays", "Holidays\Holidays.csproj", "{50183F32-D88B-43E5-ACFD-DE064ACA6DD4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirectoryCount", "DirectoryCount\DirectoryCount.csproj", "{EE270D48-7814-4A8D-8988-B07E1897F26E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DirectoryCount", "DirectoryCount\DirectoryCount.csproj", "{EE270D48-7814-4A8D-8988-B07E1897F26E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Starter templates", "Starter templates", "{0B4FD6EF-5E95-434E-8D28-F98BCDBA5E3D}"
 EndProject
@@ -33,7 +33,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GetDirFileCount", "GetDirFi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base templates", "Base templates", "{2DA52BFF-EC84-40AF-B9B8-CCE50A249A49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KP_CommandLineBase", "KP_CommandLineBase\KP_CommandLineBase.csproj", "{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_CommandLineBase", "KP_CommandLineBase\KP_CommandLineBase.csproj", "{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
