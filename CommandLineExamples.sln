@@ -35,6 +35,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base templates", "Base temp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_CommandLineBase", "KP_CommandLineBase\KP_CommandLineBase.csproj", "{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{2E49A5AA-0938-4449-89EB-EBDAA08FD935}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateBootstrapApp", "UpdateBootstrapApp\UpdateBootstrapApp.csproj", "{C27FD3C8-E181-47EF-A361-D4C31B4699BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +77,10 @@ Global
 		{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C27FD3C8-E181-47EF-A361-D4C31B4699BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C27FD3C8-E181-47EF-A361-D4C31B4699BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C27FD3C8-E181-47EF-A361-D4C31B4699BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C27FD3C8-E181-47EF-A361-D4C31B4699BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -89,6 +97,7 @@ Global
 		{5901830F-9550-49D8-A685-3B8F2E65D41D} = {5FCC3BBD-2C56-4BDB-8036-91C221AD150A}
 		{2DA52BFF-EC84-40AF-B9B8-CCE50A249A49} = {E04AFF68-9BCD-4E02-A1DE-E1343A3FC3CD}
 		{88C1DD8D-E1A8-4854-AABD-4D7B3EADC8A7} = {2DA52BFF-EC84-40AF-B9B8-CCE50A249A49}
+		{C27FD3C8-E181-47EF-A361-D4C31B4699BE} = {2E49A5AA-0938-4449-89EB-EBDAA08FD935}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ACBF010-A721-48C0-A709-B178C29A8464}
