@@ -34,8 +34,10 @@ internal partial class Program
         builder.AppendLine("libman init --default-provider cdnjs");
         builder.AppendLine("libman install bootstrap@5.3.0 " + 
                            "--destination wwwroot/lib/bootstrap/dist " + 
-                           "--files css/bootstrap.min.css --files css/bootstrap.min.css.map " + 
-                           "--files js/bootstrap.bundle.min.js --files js/bootstrap.bundle.min.js.map");
+                           "--files css/bootstrap.min.css " + 
+                           "--files css/bootstrap.min.css.map " + 
+                           "--files js/bootstrap.bundle.min.js " + 
+                           "--files js/bootstrap.bundle.min.js.map");
 
         await File.WriteAllTextAsync("install.bat", builder.ToString());
 
