@@ -37,7 +37,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KP_CommandLineBase", "KP_Co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{2E49A5AA-0938-4449-89EB-EBDAA08FD935}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UpdateBootstrapApp", "UpdateBootstrapApp\UpdateBootstrapApp.csproj", "{C27FD3C8-E181-47EF-A361-D4C31B4699BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateBootstrapApp", "UpdateBootstrapApp\UpdateBootstrapApp.csproj", "{C27FD3C8-E181-47EF-A361-D4C31B4699BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

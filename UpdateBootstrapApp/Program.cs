@@ -7,6 +7,7 @@ internal partial class Program
 {
     static async Task Main(string[] args)
     {
+        Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory()));
         // do not touch libman.json as I'm only targeting new projects
         if (File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "libman.json")))
         {
@@ -15,7 +16,7 @@ internal partial class Program
         else
         {
             await WorkOnNewProject();
-            AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.0[/]");
+            AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.1[/]");
         }
         
         Console.ReadLine();
@@ -32,7 +33,7 @@ internal partial class Program
         // create batch file for libman
         StringBuilder builder = new();
         builder.AppendLine("libman init --default-provider cdnjs");
-        builder.AppendLine("libman install bootstrap@5.3.0 " + 
+        builder.AppendLine("libman install bootstrap@5.3.1 " + 
                            "--destination wwwroot/lib/bootstrap/dist " + 
                            "--files css/bootstrap.min.css " + 
                            "--files css/bootstrap.min.css.map " + 
