@@ -1,8 +1,8 @@
 ﻿using System.CommandLine;
-using Shortcuts.Classes;
 using System.Data;
 using System.CommandLine.Builder;
 using System.CommandLine.Parsing;
+using Shortcuts.Classes;
 
 namespace Shortcuts;
 
@@ -25,26 +25,5 @@ internal partial class Program
 
         await parser.InvokeAsync(args);
 
-    }
-}
-
-internal class MainOperations
-{
-    public static void DisplayShortcuts()
-    {
-        //InitialOperations.CreateJsonFile();
-        var (shortcuts, length) = FileOperations.Read();
-
-        AnsiConsole.MarkupLine("  [cyan]ReSharper[/]");
-        var table = new Table();
-        table.AddColumn("[b]Description[/]").Alignment(Justify.Right);
-        table.AddColumn(new TableColumn("[b]Shortcut[/]")).Alignment(Justify.Left);
-
-        foreach (var root in shortcuts)
-        {
-            table.AddRow(root.Text(length), root.Combination());
-        }
-
-        AnsiConsole.Write(table);
     }
 }
