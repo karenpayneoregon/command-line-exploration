@@ -1,0 +1,152 @@
+[
+  {
+    "Description": "Extract Interface",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "O"
+      },
+      {
+        "Value": "G"
+      }
+    ],
+    "FormatColors": "[black on grey53]"
+  },
+  {
+    "Description": "Extract Superclass",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "O"
+      },
+      {
+        "Value": "E"
+      }
+    ],
+    "FormatColors": "[black on silver]"
+  },
+  {
+    "Description": "Change Signature",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "O"
+      },
+      {
+        "Value": "S"
+      }
+    ],
+    "FormatColors": "[black on grey53]"
+  },
+  {
+    "Description": "Convert Anonymous to Named Type refactoring",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "O"
+      },
+      {
+        "Value": "P"
+      }
+    ],
+    "FormatColors": "[black on silver]"
+  },
+  {
+    "Description": "Extract Method refactoring",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "O"
+      },
+      {
+        "Value": "I"
+      }
+    ],
+    "FormatColors": "[black on grey53]"
+  },
+  {
+    "Description": "Generate Deconstructors",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "T"
+      },
+      {
+        "Value": "Y"
+      }
+    ],
+    "FormatColors": "[black on silver]"
+  },
+  {
+    "Description": "Copy Type refactoring",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "C"
+      },
+      {
+        "Value": "T"
+      }
+    ],
+    "FormatColors": "[black on grey53]"
+  },
+  {
+    "Description": "Rename file from solution explorer",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "R"
+      },
+      {
+        "Value": "Y"
+      }
+    ],
+    "FormatColors": "[black on silver]"
+  },
+  {
+    "Description": "Surround code fragments",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "E"
+      },
+      {
+        "Value": "U"
+      }
+    ],
+    "FormatColors": "[black on grey53]"
+  },
+  {
+    "Description": "Razor live templates",
+    "Keys": [
+      {
+        "Value": "ctrl"
+      },
+      {
+        "Value": "E"
+      },
+      {
+        "Value": "L"
+      }
+    ],
+    "FormatColors": "[black on silver]"
+  }
+]
