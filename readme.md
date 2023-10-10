@@ -123,7 +123,7 @@ internal class Program
 
 - firstNameOption and lastNameOpen of type [Option](https://learn.microsoft.com/en-us/dotnet/standard/commandline/syntax#options) define expected parameters.
     - For first name `--first` or `-f` e.g. -f Karen
-    - For last name `--last` or `-l` e.g. -f Payne
+    - For last name `--last` or `-l` e.g. -l Payne
  - [RootCommand](https://learn.microsoft.com/en-us/dotnet/standard/commandline/syntax#root-commands) rootCommand represents the main action that the application performs
 - rootCommand.SetHandler defines, the method to handle actions passed which in this case are firstNameOption and lastNameOption
 - var commandLineBuilder = new CommandLineBuilder(rootCommand); enables composition of command line configurations.
