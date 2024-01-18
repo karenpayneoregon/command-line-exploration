@@ -16,7 +16,7 @@ The idea is to place Visual Studio shortcuts that are rarely used which makes th
 
 1. Create a folder to place the shortcut file.
 1. Copy JsonFiles\vs2022.json to the folder above.
-1. Rename the file to the version of Visual Studio installed e.g. the current file is for VS2022, if using VS2029, name it to vs2019.json or you can simple name it vs.json
+1. Rename the file to the version of Visual Studio installed e.g. the current file is for VS2022, if using VS2019, name it to vs2019.json or you can simple name it vs.json
 1. In FileOperations, adjust the property FileName to point to the json file
 1. In the json file remove current shortcuts in place of your shortcuts.
 

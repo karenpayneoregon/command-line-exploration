@@ -6,7 +6,7 @@ internal class MainOperations
     {
         var (shortcuts, length) = FileOperations.Read();
 
-        AnsiConsole.MarkupLine("  [cyan]ReSharper[/]");
+        AnsiConsole.MarkupLine("  [cyan]ReSharper and Visual Studio[/]");
         var table = new Table();
         table.AddColumn("[b]Description[/]").Alignment(Justify.Right);
         table.AddColumn(new TableColumn("[b]Shortcut[/]")).Alignment(Justify.Left);

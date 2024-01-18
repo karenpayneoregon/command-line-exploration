@@ -1,6 +1,8 @@
 ﻿# About
 
-Used to get all indexes for tables in a database, hard coded to SQLEXPRESS.
+Used to get all indexes for tables in a database. 
+
+Database `server is set in `appsettings.json`
 
 # Use as a tool
 
