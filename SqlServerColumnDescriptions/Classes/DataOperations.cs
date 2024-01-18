@@ -2,16 +2,16 @@
 using System.Data;
 using SqlServerColumnDescriptions.Models;
 using Dapper;
-using System.Reflection.PortableExecutable;
 
 
 namespace SqlServerColumnDescriptions.Classes;
 
 /// <summary>
-/// 
+/// Provides access to read database table column descriptions if present.
+/// Hard coded to SQLEXPRESS.
 /// </summary>
 /// <remarks>
-/// When time permits converting to using Dapper
+/// Originally done conventional (still here) than ported to using Dapper
 /// </remarks>
 internal class DataOperations
 {
@@ -21,8 +21,8 @@ internal class DataOperations
     {
         List<DatabaseName> list = new();
         int identifier = 1;
-        using var cn = new SqlConnection($"Data Source={Server};Initial Catalog=master;integrated security=True;Encrypt=False");
-        using var cmd = new SqlCommand { Connection = cn, CommandText = SqlStatements.GetDatabaseNames};
+        using SqlConnection cn = new($"Data Source={Server};Initial Catalog=master;integrated security=True;Encrypt=False");
+        using SqlCommand cmd = new() { Connection = cn, CommandText = SqlStatements.GetDatabaseNames};
         cn.Open();
         using var reader =  cmd.ExecuteReader();
 
@@ -38,8 +38,7 @@ internal class DataOperations
 
     public static List<DatabaseName> DatabaseNamesDapper()
     {
-        using var cn = new SqlConnection($"Data Source={Server};Initial Catalog=master;integrated security=True;Encrypt=False");
-
+        using SqlConnection cn = new($"Data Source={Server};Initial Catalog=master;integrated security=True;Encrypt=False");
         var list = cn.Query<DatabaseName>(SqlStatements.GetDatabaseNames).ToList();
         for (int index = 0; index < list.Count; index++)
         {
@@ -56,8 +55,8 @@ internal class DataOperations
 
         try
         {
-            using var cn = new SqlConnection($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
-            using var cmd = new SqlCommand { Connection = cn, CommandText = SqlStatements.GetTableNames(databaseName) };
+            using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
+            using SqlCommand cmd = new() { Connection = cn, CommandText = SqlStatements.GetTableNames(databaseName) };
             cn.Open();
             using var reader = cmd.ExecuteReader();
 
@@ -81,7 +80,7 @@ internal class DataOperations
 
         try
         {
-            using var cn = new SqlConnection($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
+            using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
             var list = cn.Query<string>(SqlStatements.GetTableNames(databaseName));
             List<string> tableNames = new();
             foreach (var item in list)
@@ -108,8 +107,8 @@ internal class DataOperations
     public static List<DatabaseTable> GetDescriptions(string databaseName,List<string> tableNames)
     {
         List<DatabaseTable> list = new();
-        using var cn = new SqlConnection($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
-        using var cmd = new SqlCommand { Connection = cn, CommandText = SqlStatements.Descriptions() };
+        using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
+        using SqlCommand cmd = new() { Connection = cn, CommandText = SqlStatements.Descriptions() };
         cmd.Parameters.Add("@TableName", SqlDbType.NChar);
         cn.Open();
 
@@ -142,7 +141,7 @@ internal class DataOperations
     public static List<DatabaseTable> GetDescriptionsDapper(string databaseName, List<string> tableNames)
     {
         List<DatabaseTable> list = new();
-        using var cn = new SqlConnection($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
+        using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
 
         foreach (var tableName in tableNames)
         {
