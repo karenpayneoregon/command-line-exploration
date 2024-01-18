@@ -44,7 +44,7 @@ public class Worker
             else
             {
                 AnsiConsole.MarkupLine($"Database: [yellow]{databaseName.Name}[/]");
-                var resultTable = new Table()
+                Table resultTable = new Table()
                     .RoundedBorder()
                     .AddColumn("[b]Column name[/]")
                     .AddColumn("[b]Description[/]")

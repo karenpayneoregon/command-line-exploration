@@ -15,7 +15,7 @@ public class Shortcut
     public string Text(int length) => $"{FormatColors}{Description.PadRight(length)}[/]";
 
     /// <summary>
-    /// One or more characters to make-up the shortcut
+    /// One or more characters to make up the shortcut
     /// </summary>
     public List<ShortCutKey> Keys { get; set; } 
     /// <summary>

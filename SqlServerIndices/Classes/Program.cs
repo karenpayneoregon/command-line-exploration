@@ -5,6 +5,9 @@ using Spectre.Console;
 namespace SqlServerIndices;
 internal partial class Program
 {
+    /// <summary>
+    /// For development only
+    /// </summary>
     [ModuleInitializer]
     public static void Init()
     {

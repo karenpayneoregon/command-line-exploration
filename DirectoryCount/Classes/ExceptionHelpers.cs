@@ -2,7 +2,6 @@
 
 namespace DirectoryCount.Classes;
 
-
 public class ExceptionHelpers
 {
     /// <summary>

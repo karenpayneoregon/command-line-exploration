@@ -17,8 +17,8 @@ public class ConfigurationMockup
     public static void Create()
     {
         ServerConfiguration configuration = new() { ServerName = "(localdb)\\MSSQLLocalDB" };
-        string jsonString = JsonSerializer.Serialize(configuration, new JsonSerializerOptions { WriteIndented = true });
-        File.WriteAllText(ConfigurationPaths.FileName, jsonString);
+        string json = JsonSerializer.Serialize(configuration, new JsonSerializerOptions { WriteIndented = true });
+        File.WriteAllText(ConfigurationPaths.FileName, json);
     }
 }
 
@@ -28,8 +28,7 @@ public class AppConfiguration
     {
         if (ConfigurationPaths.Exists)
         {
-            ServerConfiguration configuration =
-                JsonSerializer.Deserialize<ServerConfiguration>(File.ReadAllText(ConfigurationPaths.FileName));
+            ServerConfiguration configuration = JsonSerializer.Deserialize<ServerConfiguration>(File.ReadAllText(ConfigurationPaths.FileName));
 
             return configuration!.ServerName;
         }
@@ -37,6 +36,5 @@ public class AppConfiguration
         {
             throw new FileNotFoundException();
         }
-
     }
 }

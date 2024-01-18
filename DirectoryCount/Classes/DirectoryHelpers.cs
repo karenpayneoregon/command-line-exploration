@@ -1,4 +1,5 @@
-﻿namespace DirectoryCount.Classes;
+﻿// ReSharper disable CanSimplifyDictionaryLookupWithTryGetValue
+namespace DirectoryCount.Classes;
 
 public class DirectoryHelpers
 {

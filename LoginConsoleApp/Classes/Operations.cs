@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using LoginConsoleApp.Models;
+﻿using LoginConsoleApp.Models;
 
 namespace LoginConsoleApp.Classes
 {

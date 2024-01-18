@@ -1,8 +1,5 @@
-﻿using ConfigurationLibrary.Classes;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 using SqlServerIndices.Models;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
 
 namespace SqlServerIndices.Classes;

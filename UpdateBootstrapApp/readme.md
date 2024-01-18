@@ -4,6 +4,9 @@ When creating a new ASP.NET Core/Razor Pages project in Microsoft Visual Studio 
 
 At the current time, the present version of Bootstrap is 5.3.0 and to update there are two paths to upgrade Bootstrap.
 
+> **Note**
+> Not a dotnet tool
+
 ## Options
 
 ### From Visual Studio

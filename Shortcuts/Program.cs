@@ -1,5 +1,4 @@
 ﻿using System.CommandLine;
-using System.Data;
 using System.CommandLine.Builder;
 using System.CommandLine.Parsing;
 using Shortcuts.Classes;

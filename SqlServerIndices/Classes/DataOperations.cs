@@ -10,8 +10,6 @@ internal class DataOperations
 {
     public static string Server { get; set; } = Configuration.ServerSettings().Name;
 
-
-
     public static List<DatabaseName> DatabaseNamesDapper()
     {
         using SqlConnection cn = new($"Data Source={Server};Initial Catalog=master;integrated security=True;Encrypt=False");
@@ -24,7 +22,6 @@ internal class DataOperations
         list.Add(new DatabaseName() { Id = -1, Name = "Exit" });
         return list;
     }
-
     public static void GetIndexInformation(string databaseName)
     {
         using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");

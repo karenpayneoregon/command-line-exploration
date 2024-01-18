@@ -5,7 +5,12 @@ namespace Shortcuts.Classes;
 
 public class FileOperations
 {
-
+    /// <summary>
+    /// See the readme file about location of the json file
+    /// </summary>
+    /// <remarks>
+    /// Could have read this from C:\Users\xxxxx\.dotnet\tools\.store but thinking best to stay away from there as a mistake can be bad.
+    /// </remarks>
     public static string FileName => @"C:\OED\Shortcuts\vs2022rs.json";
 
     public static List<Shortcut> ReadShortcuts()
