@@ -83,6 +83,7 @@ internal class DataOperations
             using SqlConnection cn = new($"Data Source={Server};Initial Catalog={databaseName};integrated security=True;Encrypt=False");
             var list = cn.Query<string>(SqlStatements.GetTableNames(databaseName));
             List<string> tableNames = new();
+            // if so desire, modify the SQL above to exclude dbo. so the following is not needed.
             foreach (var item in list)
             {
                 tableNames.Add(item.Replace("dbo.", ""));
@@ -116,7 +117,6 @@ internal class DataOperations
         {
                 
             cmd.Parameters["@TableName"].Value = tableName;
-
             var reader = cmd.ExecuteReader();
 
             if (reader.HasRows)
@@ -126,18 +126,12 @@ internal class DataOperations
                 {
                     item.ColumnsList.Add(new Columns() {Name = reader.GetString(0), Description = reader.GetString(2)});
                 }
-
                 list.Add(item);
-
             }
-
             reader.Close();
-   
         }
-
         return list;
     }
-
     public static List<DatabaseTable> GetDescriptionsDapper(string databaseName, List<string> tableNames)
     {
         List<DatabaseTable> list = new();
@@ -146,15 +140,13 @@ internal class DataOperations
         foreach (var tableName in tableNames)
         {
             var descriptions = cn.Query<DescriptionContainer>(SqlStatements.Descriptions(), new { TableName = tableName });
-            if (descriptions.Any())
+            if (!descriptions.Any()) continue;
+            DatabaseTable item = new() { DatabaseName = databaseName, TableName = tableName, ColumnsList = new List<Columns>() };
+            foreach (var container in descriptions)
             {
-                DatabaseTable item = new() { DatabaseName = databaseName, TableName = tableName, ColumnsList = new List<Columns>() };
-                foreach (var container in descriptions)
-                {
-                    item.ColumnsList.Add(new Columns() { Name = container.ColumnName, Description = container.Description });
-                }
-                list.Add(item);
+                item.ColumnsList.Add(new Columns() { Name = container.ColumnName, Description = container.Description });
             }
+            list.Add(item);
         }
         return list;
     }

@@ -1,13 +1,19 @@
 ﻿namespace SqlServerColumnDescriptions.Classes;
 
+/// <summary>
+/// Sloppy SQL
+/// </summary>
 internal class SqlStatements
 {
     public static string GetDatabaseNames 
         => "SELECT name FROM sys.databases WHERE name NOT IN ('master', 'tempdb', 'model', 'msdb') ORDER BY name";
 
     public static string GetTableNames(string name)
-        => $"SELECT TABLE_SCHEMA + '.' + TABLE_NAME FROM [{name}].INFORMATION_SCHEMA.TABLES " + 
-           "WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME <> 'sysdiagrams' ORDER BY TABLE_NAME";
+        => @$"
+SELECT TABLE_SCHEMA + '.' + TABLE_NAME 
+FROM [{name}].INFORMATION_SCHEMA.TABLES 
+WHERE TABLE_TYPE = 'BASE TABLE' AND TABLE_NAME <> 'sysdiagrams' 
+ORDER BY TABLE_NAME";
 
     public static string Descriptions()
         => @$"
