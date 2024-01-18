@@ -44,8 +44,10 @@ internal class MainOperations
             {
 
                 Enum.TryParse(countryCode, true, out CountryCode code);
+
                 if (holiday.Date > Now)
                 {
+                    var test = Now;
                     if (holiday.Date.IsWeekend(code))
                     {
                         table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]", "[yellow]*[/]");

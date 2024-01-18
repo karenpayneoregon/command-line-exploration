@@ -41,7 +41,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UpdateBootstrapApp", "Updat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoginConsoleApp", "LoginConsoleApp\LoginConsoleApp.csproj", "{8BCE2BBC-F2FC-401A-B948-30F1FD0ADEDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shortcuts", "Shortcuts\Shortcuts.csproj", "{88E5F0C9-93FB-4BC7-AA3D-341B09787E23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shortcuts", "Shortcuts\Shortcuts.csproj", "{88E5F0C9-93FB-4BC7-AA3D-341B09787E23}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerColumnDescriptions", "SqlServerColumnDescriptions\SqlServerColumnDescriptions.csproj", "{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{88E5F0C9-93FB-4BC7-AA3D-341B09787E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E5F0C9-93FB-4BC7-AA3D-341B09787E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E5F0C9-93FB-4BC7-AA3D-341B09787E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -112,6 +118,7 @@ Global
 		{C27FD3C8-E181-47EF-A361-D4C31B4699BE} = {2E49A5AA-0938-4449-89EB-EBDAA08FD935}
 		{8BCE2BBC-F2FC-401A-B948-30F1FD0ADEDD} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 		{88E5F0C9-93FB-4BC7-AA3D-341B09787E23} = {2E49A5AA-0938-4449-89EB-EBDAA08FD935}
+		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ACBF010-A721-48C0-A709-B178C29A8464}
