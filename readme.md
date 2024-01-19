@@ -186,6 +186,16 @@ Are listed below, the project CommandArgsConsoleAppHelp showcases how to overrid
 | CommandArgsConsoleSubCommands |  Shows how to use verbs and commands to read a file in chunks and display to the screen. This project is based off a Microsoft code sample and enhanced.|
 | DirectoryCount| This project demonstrates how to get a folder and file count recursively for a folder name passed. If the user lacks proper permissions an exception is caught and thrown. |
 | Holidays | This project shows holidays by two letter country code for the current year and is setup to run as a dot net tool with instructions in its read me file. |
+| Login | Simple example for hidden password input and a few other nice things using NuGet package [Spectre.Console](https://www.nuget.org/packages/Spectre.Console/0.44.1-preview.0.13). |
+| SqlServerColumnDescriptions | Example which reads `column descriptions` from `SQL-Server` database tables if present. Note the server name is hard wired but easy to change or see SqlServerIndices project which uses appsettings.json to get the server name. In the class for data operations, there are mirror methods, one conventional and the other with `Dapper`. |
+| SqlServerIndices | An example cut from base code in `SqlServerColumnDescriptions` to get all indexes if present from a `SQL-Server` database. Unlike `SqlServerColumnDescriptions` project, server name is in appsettings.json |
+|  :curly_loop: | On the last two projects another idea for setting server name is to setup an argument e.g. `--servername someserver`. Checkout `CommandArgsConsoleApp1` project for how this can be done. |
+| Shortcuts | A simple example which reads Visual Studio and Resharper shortcuts in a table. The idea is to provide an easy way to get at shortcuts that are rarely used thus easy to forget. I have this setup in Visual Studio as an [external tool](https://learn.microsoft.com/en-us/visualstudio/ide/managing-external-tools?view=vs-2022). Shortcuts are stored in a json file. |
+| UpdateBootstrapApp | Used to update BootStrap in a new ASP.NET Core/Razor Pages project.  |
+
+## Mot all are dotnet tools
+
+There are several projects that are here as developer tools that are simply console projects yet there are plenty of dotnet tool projects too and some that are not that could be.
 
 ## See also
 

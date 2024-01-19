@@ -1,0 +1,9 @@
+<#@ output extension=".md" #>
+<#@ parameter name="Max" type="int" #>
+<#@ import namespace="System.Linq" #>
+# Table of Powers
+Number | Square | Cube
+--- | ---
+<# foreach(int i in Enumerable.Range(2,Max)) {#>
+<#= i #> | <#= i*i #> | <#= i*i*i #>
+<#}#>

@@ -8,8 +8,7 @@ internal class MainOperations
 
             try
             {
-                var (directoryCount, fileCount) = 
-                    DirectoryHelpers.DirectoryFileCount(folderName, SearchOption.AllDirectories);
+                var (directoryCount, fileCount) = DirectoryHelpers.DirectoryFileCount(folderName, SearchOption.AllDirectories);
 
                 Console.WriteLine($"Dir count {directoryCount:N0}");
                 Console.WriteLine($"File count {fileCount:N0}");

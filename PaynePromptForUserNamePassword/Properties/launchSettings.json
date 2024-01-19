@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CommandArgsConsoleApp": {
+      "commandName": "Project",
+      "commandLineArgs": "--username yelena -p pass7"
+    }
+  }
+}

@@ -9,7 +9,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandArgsConsoleApp2", "C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{A2D079D0-F829-4344-8FE6-A2DEEA605D85}"
 	ProjectSection(SolutionItems) = preProject
+		dotnet-t4.md = dotnet-t4.md
 		logDatabaseSchema.sql = logDatabaseSchema.sql
+		powers.md = powers.md
+		powers.tt = powers.tt
 		readme.md = readme.md
 	EndProjectSection
 EndProject
@@ -46,6 +49,8 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerColumnDescriptions", "SqlServerColumnDescriptions\SqlServerColumnDescriptions.csproj", "{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerIndices", "SqlServerIndices\SqlServerIndices.csproj", "{1D013802-6310-486B-BBAB-88F9DB38723F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaynePromptForUserNamePassword", "PaynePromptForUserNamePassword\PaynePromptForUserNamePassword.csproj", "{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +110,10 @@ Global
 		{1D013802-6310-486B-BBAB-88F9DB38723F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1D013802-6310-486B-BBAB-88F9DB38723F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1D013802-6310-486B-BBAB-88F9DB38723F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +135,7 @@ Global
 		{88E5F0C9-93FB-4BC7-AA3D-341B09787E23} = {2E49A5AA-0938-4449-89EB-EBDAA08FD935}
 		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 		{1D013802-6310-486B-BBAB-88F9DB38723F} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
+		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71} = {5FCC3BBD-2C56-4BDB-8036-91C221AD150A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ACBF010-A721-48C0-A709-B178C29A8464}
