@@ -52,6 +52,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SqlServerIndices", "SqlServ
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PaynePromptForUserNamePassword", "PaynePromptForUserNamePassword\PaynePromptForUserNamePassword.csproj", "{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MarkOfTheWeb", "MarkOfTheWeb\MarkOfTheWeb.csproj", "{41D170A4-6883-47C7-9425-8D63019AA343}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -114,6 +116,10 @@ Global
 		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41D170A4-6883-47C7-9425-8D63019AA343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41D170A4-6883-47C7-9425-8D63019AA343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41D170A4-6883-47C7-9425-8D63019AA343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41D170A4-6883-47C7-9425-8D63019AA343}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -136,6 +142,7 @@ Global
 		{AAFE4B18-AC3D-4FBE-AF6B-5ACB4FFD9A5D} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 		{1D013802-6310-486B-BBAB-88F9DB38723F} = {408D23FA-3612-4C46-ABCF-D802E705EA3F}
 		{E6A0B6F0-F3AF-44D5-B323-DBDBE3362E71} = {5FCC3BBD-2C56-4BDB-8036-91C221AD150A}
+		{41D170A4-6883-47C7-9425-8D63019AA343} = {5FCC3BBD-2C56-4BDB-8036-91C221AD150A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {2ACBF010-A721-48C0-A709-B178C29A8464}

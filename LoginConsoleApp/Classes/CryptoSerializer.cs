@@ -1,4 +1,6 @@
 ﻿using System.Security.Cryptography;
+#pragma warning disable SYSLIB0023
+#pragma warning disable SYSLIB0021
 
 namespace LoginConsoleApp.Classes
 {
