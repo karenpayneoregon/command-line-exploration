@@ -36,6 +36,7 @@ internal class MainOperations
                 .RoundedBorder()
                 .AddColumn("[b]Name[/]")
                 .AddColumn("[b]Date[/]")
+                .AddColumn("[b]Day of week[/]")
                 .AddColumn("[b]Weekend[/]")
                 .Alignment(Justify.Left)
                 .BorderColor(Color.CadetBlue);
@@ -50,22 +51,31 @@ internal class MainOperations
                     var test = Now;
                     if (holiday.Date.IsWeekend(code))
                     {
-                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]", "[yellow]*[/]");
+                        table.AddRow($"[cyan]{holiday.Name}[/]", 
+                            $"[white]{holiday.Date:MM/dd/yyyy}[/]", 
+                            "[yellow]*[/]",
+                            $"[cyan]{holiday.Date.DayOfWeek}[/]");
                     }
                     else
                     {
-                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]");
+                        table.AddRow($"[cyan]{holiday.Name}[/]", 
+                            $"[white]{holiday.Date:MM/dd/yyyy}[/]",
+                            $"[cyan]{holiday.Date.DayOfWeek}[/]");
                     }
                 }
                 else
                 {
                     if (holiday.Date.IsWeekend(code))
                     {
-                        table.AddRow($"[cyan]{holiday.Name}[/]", $"[white]{holiday.Date:MM/dd/yyyy}[/]", "[yellow]*[/]");
+                        table.AddRow($"[cyan]{holiday.Name}[/]", 
+                            $"[white]{holiday.Date:MM/dd/yyyy}[/]", 
+                            "[yellow]*[/]",
+                            $"{holiday.Date.DayOfWeek}");
                     }
                     else
                     {
-                        table.AddRow($"{holiday.Name}", $"{holiday.Date:MM/dd/yyyy}");
+                        table.AddRow($"{holiday.Name}", $"{holiday.Date:MM/dd/yyyy}",
+                            $"{holiday.Date.DayOfWeek}");
                     }
                 }
             }

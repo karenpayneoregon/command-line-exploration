@@ -2,7 +2,7 @@
   "profiles": {
     "Holidays": {
       "commandName": "Project",
-      "commandLineArgs": "-c ca"
+      "commandLineArgs": "-c us"
     }
   }
 }
