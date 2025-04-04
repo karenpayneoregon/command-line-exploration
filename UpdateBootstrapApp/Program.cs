@@ -16,6 +16,7 @@ internal partial class Program
         else
         {
             //await WorkOnNewProject();
+            // TODO write config file to select version in appsettings.json
             await WorkOnNewProject2025();
             AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.4[/]");
         }
