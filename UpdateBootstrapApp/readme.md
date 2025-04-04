@@ -2,18 +2,18 @@
 
 When creating a new ASP.NET Core/Razor Pages project in Microsoft Visual Studio 2022, Bootstrap 5.1.0 is installed.
 
-At the current time, the present version of Bootstrap is 5.3.0 and to update there are two paths to upgrade Bootstrap.
+At the current time, the present version of Bootstrap is 5.3.4 and to update there are two paths to upgrade Bootstrap.
 
 > **Note**
-> Not a dotnet tool
+> Not a dotnet tool and some of the instructions need to be updated as of April 2025.
 
 ## Options
 
 ### From Visual Studio
 
-Right clicking in solution explorer in the project, select **Add**, **Client-Side library** then type **bootstrap** and you get bootstrap@5.3.0 (or if there is a newer version than it will show). Next click **Install**.
+Right clicking in solution explorer in the project, select **Add**, **Client-Side library** then type **bootstrap** and you get bootstrap@5.3.4 (or if there is a newer version than it will show). Next click **Install**.
 
-### From CLI
+### From CLI 5.3 (not 5.3.4))
 
 - In solution explorer, right click on wwwroot/lib/bootstrap
 - Delete the folder
