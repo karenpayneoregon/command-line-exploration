@@ -38,7 +38,7 @@ internal partial class Program
         Parser parser = commandLineBuilder.Build();
 
         await parser.InvokeAsync(args);
-        //Console.ReadLine();
+        Console.ReadLine();
     }
 
 }

@@ -15,13 +15,26 @@ internal partial class Program
         }
         else
         {
-            await WorkOnNewProject();
-            AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.1[/]");
+            //await WorkOnNewProject();
+            await WorkOnNewProject2025();
+            AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.4[/]");
         }
         
         Console.ReadLine();
     }
 
+    /// <summary>
+    /// Updates the current project to use Bootstrap version 5.3.1 by removing any existing Bootstrap files,
+    /// creating a batch file for LibMan commands, and executing it to install the specified Bootstrap version.
+    /// </summary>
+    /// <remarks>
+    /// This method performs the following steps:
+    /// 1. Deletes the existing Bootstrap directory if it exists.
+    /// 2. Generates a batch file containing LibMan commands to initialize and install Bootstrap.
+    /// 3. Executes the batch file to install the specified Bootstrap files.
+    /// 4. Deletes the batch file after execution.
+    /// </remarks>
+    /// <returns>A <see cref="Task"/> that represents the asynchronous operation.</returns>
     private static async Task WorkOnNewProject()
     {
         // remove current bootstrap
@@ -58,7 +71,75 @@ internal partial class Program
         process!.WaitForExit(-1);
         await Task.Delay(1000);
 
-        // clean up
         File.Delete(batchCommandFile);
     }
+    /// <summary>
+    /// Updates the current project to use Bootstrap version 5.3.4 by removing any existing Bootstrap files,
+    /// creating a batch file for LibMan commands, and executing it to install the specified Bootstrap version.
+    /// </summary>
+    /// <remarks>
+    /// This method performs the following steps:
+    /// 1. Deletes the existing Bootstrap directory if it exists.
+    /// 2. Generates a batch file containing LibMan commands to initialize and install Bootstrap.
+    /// 3. Executes the batch file and captures its output and errors.
+    /// 4. Deletes the batch file after execution.
+    /// </remarks>
+    /// <returns>A <see cref="Task"/> that represents the asynchronous operation.</returns>
+    private static async Task WorkOnNewProject2025()
+    {
+        // Remove current bootstrap
+        if (Directory.Exists("wwwroot\\lib\\bootstrap"))
+        {
+            Directory.Delete("wwwroot\\lib\\bootstrap", true);
+        }
+
+        // Create batch file for libman
+        StringBuilder builder = new();
+        builder.AppendLine("libman init --default-provider jsdelivr");
+        builder.AppendLine("libman install bootstrap@5.3.4 --destination wwwroot/lib/bootstrap/dist");
+
+        await File.WriteAllTextAsync("install.bat", builder.ToString());
+
+        await Task.Delay(1000); // Slight delay to ensure file write
+
+        var batchCommandFile = Path.Combine(Directory.GetCurrentDirectory(), "install.bat");
+
+        ProcessStartInfo psi = new()
+        {
+            FileName = batchCommandFile,
+            WorkingDirectory = Directory.GetCurrentDirectory(),
+            RedirectStandardOutput = true,
+            RedirectStandardError = true,
+            UseShellExecute = false,
+            CreateNoWindow = true,
+        };
+
+        using Process process = new() { StartInfo = psi };
+
+        StringBuilder outputBuilder = new();
+        StringBuilder errorBuilder = new();
+
+        process.OutputDataReceived += (sender, e) => { if (e.Data != null) outputBuilder.AppendLine(e.Data); };
+        process.ErrorDataReceived += (sender, e) => { if (e.Data != null) errorBuilder.AppendLine(e.Data); };
+
+        process.Start();
+        process.BeginOutputReadLine();
+        process.BeginErrorReadLine();
+
+        await process.WaitForExitAsync();
+
+        if (process.ExitCode != 0)
+        {
+            Console.WriteLine("Error during batch execution:");
+            Console.WriteLine(errorBuilder.ToString());
+        }
+        else
+        {
+            Console.WriteLine("Batch execution output:");
+            Console.WriteLine(outputBuilder.ToString());
+        }
+
+        File.Delete(batchCommandFile);
+    }
+
 }
