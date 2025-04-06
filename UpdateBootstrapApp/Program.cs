@@ -8,7 +8,7 @@ internal partial class Program
 {
     static async Task Main(string[] args)
     {
-        var test = LibManCommandSettings.LoadFromConfiguration();
+        //var test = LibManCommandSettings.LoadFromConfiguration();
 
         Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory()));
         // do not touch libman.json as I'm only targeting new projects
