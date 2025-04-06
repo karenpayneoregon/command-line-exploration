@@ -1,0 +1,3 @@
+﻿# About
+
+For testing `UpdateBootstrapApp`

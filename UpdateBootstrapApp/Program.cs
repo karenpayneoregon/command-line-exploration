@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using System.Text;
+using UpdateBootstrapApp.Models;
 
 namespace UpdateBootstrapApp;
 
@@ -7,6 +8,8 @@ internal partial class Program
 {
     static async Task Main(string[] args)
     {
+        var test = LibManCommandSettings.LoadFromConfiguration();
+
         Console.WriteLine(Path.Combine(Directory.GetCurrentDirectory()));
         // do not touch libman.json as I'm only targeting new projects
         if (File.Exists(Path.Combine(Directory.GetCurrentDirectory(), "libman.json")))
@@ -17,7 +20,7 @@ internal partial class Program
         {
             //await WorkOnNewProject();
             // TODO write config file to select version in appsettings.json
-            await WorkOnNewProject2025();
+            await UpdateToVersion5_3_4();
             AnsiConsole.MarkupLine("[yellow]Bootstrap is now[/] [white]5.3.4[/]");
         }
         
@@ -86,8 +89,9 @@ internal partial class Program
     /// 4. Deletes the batch file after execution.
     /// </remarks>
     /// <returns>A <see cref="Task"/> that represents the asynchronous operation.</returns>
-    private static async Task WorkOnNewProject2025()
+    private static async Task UpdateToVersion5_3_4()
     {
+
         // Remove current bootstrap
         if (Directory.Exists("wwwroot\\lib\\bootstrap"))
         {
@@ -97,7 +101,7 @@ internal partial class Program
         // Create batch file for libman
         StringBuilder builder = new();
         builder.AppendLine("libman init --default-provider jsdelivr");
-        builder.AppendLine("libman install bootstrap@5.3.4 --destination wwwroot/lib/bootstrap/dist");
+        builder.AppendLine("libman install bootstrap@5.3.4 --destination wwwroot/lib/bootstrap --files dist/css/* --files dist/js/*");
 
         await File.WriteAllTextAsync("install.bat", builder.ToString());
 

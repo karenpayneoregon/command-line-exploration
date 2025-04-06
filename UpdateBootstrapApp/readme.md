@@ -1,11 +1,14 @@
 ﻿# About
 
-When creating a new ASP.NET Core/Razor Pages project in Microsoft Visual Studio 2022, Bootstrap 5.1.0 is installed.
+~~When creating a new ASP.NET Core/Razor Pages project in Microsoft Visual Studio 2022, Bootstrap 5.1.0 is installed.~~
 
-At the current time, the present version of Bootstrap is 5.3.4 and to update there are two paths to upgrade Bootstrap.
+`04/2025` At the current time, the present version of Bootstrap is 5.3.4 and to update there are two paths to upgrade Bootstrap.
 
 > **Note**
 > Not a dotnet tool and some of the instructions need to be updated as of April 2025.
+
+
+:stop_sign: The remainder of this document has not been updated to reflect the current version of Bootstrap. The instructions are for 5.3.0 and not 5.3.4.
 
 ## Options
 

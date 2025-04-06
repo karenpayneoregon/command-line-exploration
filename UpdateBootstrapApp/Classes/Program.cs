@@ -7,7 +7,7 @@ internal partial class Program
     [ModuleInitializer]
     public static void Init()
     {
-        Console.Title = "Update Bootstrap to version 5.3.0";
+        Console.Title = "Update Bootstrap to version 5.3.4";
         WindowUtility.SetConsoleWindowPosition(WindowUtility.AnchorWindow.Center);
     }
 }
